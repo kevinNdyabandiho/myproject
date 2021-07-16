@@ -8,5 +8,5 @@ This a web application meant for waste collection.
 - run `php artisan migrate` to create tables in the database.
 - ***click on the url*** of your development server to see the app
 
-***The project has login and registration, email verification it needs more customization***
+***The project has login, registration and email verification it needs more customization***
 
