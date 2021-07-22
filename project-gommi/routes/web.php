@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::view(uri: 'profile', view: 'profile')->name('profile');
+    Route::put( 'profile', [ProfileController::class, 'update'])->name( name:'profile.update');
+});
+
+
+require __DIR__ . '/auth.php';
