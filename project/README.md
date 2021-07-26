@@ -6,7 +6,7 @@ This a web application meant for waste collection.
 - rename the file `.env.example` to `.env`
 - Add the values for the variables
     `DATABASE` **etc**
-    ***email verification variables***
+    - ***email verification variables***
     `MAIL_MAILER`
     `MAIL_HOST` **etc**
     
